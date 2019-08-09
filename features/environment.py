@@ -41,12 +41,13 @@ def after_step(context, step):
 
                 expert_rel_filename = screenshot_directory + expert_file_name
                 expert_dest_filename = script_directory + expert_rel_filename
-                context.expert_driver.save_screenshot(expert_dest_filename)
+                context.expert_browser.save_screenshot(expert_dest_filename)
 
             elif hasattr(context, 'asker_browser'):
                 asker_file_name = time.strftime("%H%M%S_%d_%m_%Y") + "_AskerBrowser_" + context.scenario.name.replace(" ", "_") + "_" + context.step.name.replace(" ", "_") + "." + "png"
                 asker_rel_filename = screenshot_directory + asker_file_name
                 asker_dest_filename = script_directory + asker_rel_filename
-                context.asker_driver.save_screenshot(asker_dest_filename)
+                context.asker_browser.save_screenshot(asker_dest_filename)
         except:
             print("Exception occurs. Can not take screenshot")
+
