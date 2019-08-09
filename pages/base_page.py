@@ -48,3 +48,7 @@ class BasePage:
     def send_key_to_element(self, location, field_input):
         self.wait_until_presence_of_element_located(location)
         self.get_element(location).send_keys(field_input)
+
+    def click_and_confirm_click_element(self, location_element1, location_element2):
+        self.click_on_element(location_element1)
+        self.click_on_element(location_element2)

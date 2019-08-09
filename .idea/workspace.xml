@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="260fb5ed-15f8-4d79-bb8b-a58a2c6aaffa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/askflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/askflow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/expert/expert_connectingpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/expert/expert_connectingpage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,8 +161,16 @@
       <workItem from="1565238507642" duration="13073000" />
       <workItem from="1565254091782" duration="29171000" />
       <workItem from="1565338145823" duration="8523000" />
-      <workItem from="1565349441786" duration="522000" />
+      <workItem from="1565349441786" duration="1390000" />
     </task>
+    <task id="LOCAL-00001" summary="update environment">
+      <created>1565349995829</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565349995829</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,8 +189,12 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update environment" />
+    <option name="LAST_COMMIT_MESSAGE" value="update environment" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/practice_askflow_behave$askflow_feature.coverage" NAME="askflow.feature Coverage Results" MODIFIED="1565349867357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/practice_askflow_behave$askflow_feature.coverage" NAME="askflow.feature Coverage Results" MODIFIED="1565352807627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/practice_askflow_behave$askflow.coverage" NAME="askflow Coverage Results" MODIFIED="1565338628447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/practice_askflow_behave$askflow_feature_Asker_and_Expert_can_enter_session_and_send_chat_message.coverage" NAME="askflow.feature:Asker and Expert can enter session and send chat message Coverage Results" MODIFIED="1565254636506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>

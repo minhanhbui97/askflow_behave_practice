@@ -20,12 +20,10 @@ class ExpertConnectingPage(BasePage):
             if self.get_element(self._bid_question_description).text is not None:
                 print(self.get_element(self._bid_question_description).text)
                 if self.get_element(self._bid_question_description).text == question:
-                    self.click_on_element(self._claim_button)
-                    self.click_on_element(self._confirm_claim_button)
+                    self.click_and_confirm_click_element(self._claim_button, self._confirm_claim_button)
                     time.sleep(1)
                     break
                 else:
-                    self.click_on_element(self._skip_button)
-                    self.click_on_element(self._confirm_skip_button)
+                    self.click_and_confirm_click_element(self._skip_button, self._confirm_skip_button)
             time.sleep(1)
 

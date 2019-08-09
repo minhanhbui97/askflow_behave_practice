@@ -144,5 +144,5 @@ def step_impl(context):
 
 @then("Expert should see Asker's chat message")
 def step_impl(context):
-    expert_workspace = ExpertWorkspace(context.asker_browser)
+    expert_workspace = ExpertWorkspace(context.expert_browser)
     expert_workspace.see_chat_message_from_asker(MainConfig.CHAT_MESSAGE)
