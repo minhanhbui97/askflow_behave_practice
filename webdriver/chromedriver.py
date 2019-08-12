@@ -6,7 +6,6 @@ def set_chrome_options(headless_mode=False):
     headless_option = webdriver.ChromeOptions()
     if headless_mode:
         headless_option.add_argument('headless')
-        headless_option.add_argument('--window-size=1920x1080')
     return headless_option
 
 

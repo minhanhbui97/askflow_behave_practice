@@ -9,7 +9,6 @@ class AskerLandingPage(BasePage):
         self.container = "div.gi-Layout.gi-Landing--QueryV2"
 
     _login_button = "#test-login-button"
-    _asker_login_modal = "#modal-login"
 
     def click_login_link(self):
         self.click_on_element(self._login_button)

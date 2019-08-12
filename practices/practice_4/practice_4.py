@@ -1,8 +1,7 @@
-import json
 import time
-from pprint import pprint
-from practices.storefront_config import StorefrontConfig
-from practices.file_controller import FileController
+import json
+from practices.practice_4.file_controller import FileController
+from practices.practice_4.storefront_config import StorefrontConfig
 
 modify_data = {
   "expiration_time": 200,
@@ -33,15 +32,27 @@ modify_data = {
       ]
   }
 }
-print("Type of modify_data variable")
-print(type(modify_data))
 
-# file_controller = FileController()
-config = FileController().read_file("data.json")
-print("Config object:")
-print(config)
-print(type(config))
-config.update_file(modify_data)
-print("After update_file")
-print(type(config))
-FileController().write_file(config, "result.json")
+
+# Files
+input_file = "practice_4/data.json"
+output_file = "practice_4/result.json"
+
+# Read file
+file_content = FileController().read_file(input_file)
+# read file and return a JSON string
+
+# Initiate instance of StorefrontConfig
+config = StorefrontConfig(data=json.loads(file_content))
+# json.loads('a JSON String') parse a JSON string into a dictionary object
+
+# Update data
+config.update_data(modify_data)
+# update_data('a dict object') will update the instance config (StorefrontConfig object)
+
+# Write file
+# config.data = dict object
+content_to_write = config.data
+FileController().write_file(json.dumps(content_to_write, indent=4), output_file)
+# json.dumps('a dict object') converts a dict object to a JSON string
+# then write_file write JSON string to a file named "output_file"

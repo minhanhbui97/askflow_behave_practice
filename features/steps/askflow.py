@@ -1,4 +1,3 @@
-import time
 from behave import given, when, then
 from cfg.staging import StagingConfigs
 from pages.expert.expert_landingpage import ExpertLandingPage
@@ -19,11 +18,11 @@ from pages.asker.problem_expert_intro_modal import ProblemExpertIntroModal
 def step_impl(context):
     context.expert_browser.get(StagingConfigs.EXPERT_PORTAL)
     print(context.expert_browser.title)
-    expert_landingpage = ExpertLandingPage(context.expert_browser)
-    assert expert_landingpage.is_present(expert_landingpage.element_in_container, expert_landingpage.container)
+    expert_landing_page = ExpertLandingPage(context.expert_browser)
+    assert expert_landing_page.is_present()
 
 
-@when("Expert logs in by email and password successfully")
+@given("Expert logs in by email and password successfully")
 def step_impl(context):
     expert_landingpage = ExpertLandingPage(context.expert_browser)
     expert_landingpage.click_login_link()
@@ -35,14 +34,14 @@ def step_impl(context):
 @then("Expert should be able to skip Intro Modal")
 def step_impl(context):
     expert_expert_intro_modal = ExpertIntroModal(context.expert_browser)
-    assert expert_expert_intro_modal.is_present(expert_expert_intro_modal.element_in_container, expert_expert_intro_modal.container)
+    assert expert_expert_intro_modal.is_present()
     expert_expert_intro_modal.click_skip_button()
 
 
 @then("Expert should enter Homepage")
 def step_impl(context):
     expert_homepage = ExpertHomePage(context.expert_browser)
-    assert expert_homepage.is_present(expert_homepage.element_in_container, expert_homepage.container)
+    assert expert_homepage.is_present()
 
 
 @when("Expert clicks Start Working button")
@@ -54,7 +53,7 @@ def step_impl(context):
 @then("Expert should be in Connecting Area")
 def step_impl(context):
     expert_connectingarea = ExpertConnectingPage(context.expert_browser)
-    assert expert_connectingarea.is_present(expert_connectingarea.element_in_container, expert_connectingarea.container)
+    assert expert_connectingarea.is_present()
 
 
 @given("Asker is on Landing Page")
@@ -64,7 +63,7 @@ def step_impl(context):
     print(context.asker_browser.title)
 
     asker_landingpage = AskerLandingPage(context.asker_browser)
-    assert asker_landingpage.is_present(asker_landingpage.element_in_container, asker_landingpage.container)
+    assert asker_landingpage.is_present()
 
 
 # @when("Asker logs in by Google account")
@@ -85,7 +84,7 @@ def step_impl(context):
     asker_landingpage.click_login_link()
 
     asker_login_modal = AskerLoginModal(context.asker_browser)
-    assert asker_login_modal.is_present(asker_login_modal.element_in_container, asker_login_modal.container)
+    assert asker_login_modal.is_present()
     asker_login_modal.enter_email_field(StagingConfigs.ASKER_EMAIL)
     asker_login_modal.enter_password_field(StagingConfigs.ASKER_PASSWORD)
     asker_login_modal.click_submit_login_button()
@@ -94,7 +93,7 @@ def step_impl(context):
 @then("Asker should enter Homepage")
 def step_impl(context):
     asker_homepage = AskerHomePage(context.asker_browser)
-    assert asker_homepage.is_present(asker_homepage.element_in_container, asker_homepage.container)
+    assert asker_homepage.is_present()
 
 
 @when("Asker posts a question with description and type successfully")
@@ -108,7 +107,7 @@ def step_impl(context):
 @then("Asker should see Matching Modal")
 def step_impl(context):
     asker_matching_modal = AskerMatchingModal(context.asker_browser)
-    assert asker_matching_modal.is_present(asker_matching_modal.element_in_container, asker_matching_modal.container)
+    assert asker_matching_modal.is_present()
 
 
 @when("Expert claims Asker's question")
@@ -120,20 +119,20 @@ def step_impl(context):
 @then("Asker should be able to close Problem Expert Intro Modal")
 def step_impl(context):
     problem_expert_intro_modal = ProblemExpertIntroModal(context.asker_browser)
-    assert problem_expert_intro_modal.is_present(problem_expert_intro_modal.element_in_container, problem_expert_intro_modal.container)
+    assert problem_expert_intro_modal.is_present()
     problem_expert_intro_modal.close_expert_intro_modal()
 
 
 @then("Asker should enter Workspace")
 def step_impl(context):
     asker_workspace = AskerWorkspace(context.asker_browser)
-    assert asker_workspace.is_present(asker_workspace.element_in_container, asker_workspace.container)
+    assert asker_workspace.is_present()
 
 
 @then("Expert should enter on Workspace")
 def step_impl(context):
     expert_workspace = ExpertWorkspace(context.expert_browser)
-    assert expert_workspace.is_present(expert_workspace.element_in_container, expert_workspace.container)
+    assert expert_workspace.is_present()
 
 
 @when("Asker sends a chat message")
@@ -145,4 +144,4 @@ def step_impl(context):
 @then("Expert should see Asker's chat message")
 def step_impl(context):
     expert_workspace = ExpertWorkspace(context.expert_browser)
-    expert_workspace.see_chat_message_from_asker(MainConfig.CHAT_MESSAGE)
+    assert expert_workspace.get_asker_last_message(MainConfig.CHAT_MESSAGE)

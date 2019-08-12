@@ -7,7 +7,7 @@ class AskerWorkspace(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.element_in_container = "textarea.ex-richeditor"
+        self.element_in_container = self._chat_area
         self.container = "div.gi-Layout.gi-Workspace"
 
     _chat_area = "textarea.ex-richeditor"

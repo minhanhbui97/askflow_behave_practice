@@ -5,8 +5,8 @@ class ExpertHomePage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.container = "div.expert-home-main"
-        self.element_in_container = "div.expert-primary-menu a.link-item.btn"
+        self.container = ".expert-home-main"
+        self.element_in_container = self._start_working_button
 
     _start_working_button = "div.expert-primary-menu a.link-item.btn"
 

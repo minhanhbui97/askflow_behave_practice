@@ -1,5 +1,5 @@
-from practices.enums import Session
-from practices.invalid_value_exception import InvalidValueException
+from practices.practice_2.enums import Session
+from practices.practice_2.invalid_value_exception import InvalidValueException
 
 
 class Step:
@@ -16,6 +16,7 @@ class Step:
         print("I completed %s" % str(
             session_list.get(self.number_of_sessions)) + " sessions and I rated my expert %s" % str(
             star_list.get(self.number_of_stars)) + " stars")
+
         if self.number_of_sessions not in session_list:
             raise InvalidValueException("Invalid number of sessions")
         elif self.number_of_stars not in star_list:

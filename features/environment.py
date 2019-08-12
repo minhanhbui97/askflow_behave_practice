@@ -4,7 +4,6 @@ from behave.fixture import use_fixture_by_tag
 from features.fixtures import browser_asker
 from features.fixtures import browser_expert
 
-
 fixture_registry = {
     "fixture.browser.asker": browser_asker,
     "fixture.browser.expert": browser_expert
@@ -12,18 +11,12 @@ fixture_registry = {
 
 
 def before_tag(context, tag):
-    if tag == "fixture.browser.asker":
-        return use_fixture_by_tag(tag, context, fixture_registry)
-    elif tag == "fixture.browser.expert":
+    if tag.startwith("fixture.browser"):
         return use_fixture_by_tag(tag, context, fixture_registry)
 
 
 def before_scenario(context, scenario):
     context.scenario = scenario
-
-
-def before_step(context, step):
-    context.step = step
 
 
 def after_step(context, step):
@@ -37,17 +30,18 @@ def after_step(context, step):
                 os.makedirs(dest_directory)
 
             if hasattr(context, 'expert_browser'):
-                expert_file_name = time.strftime("%H%M%S_%d_%m_%Y") + "_ExpertBrowser_" + context.scenario.name.replace(" ", "_") + "_" + context.step.name.replace(" ", "_") + "." + "png"
+                expert_file_name = time.strftime("%H%M%S_%d_%m_%Y") + "_ExpertBrowser_" + context.scenario.name.replace(
+                    " ", "_") + "_" + context.step.name.replace(" ", "_") + "." + "png"
 
                 expert_rel_filename = screenshot_directory + expert_file_name
                 expert_dest_filename = script_directory + expert_rel_filename
                 context.expert_browser.save_screenshot(expert_dest_filename)
 
             elif hasattr(context, 'asker_browser'):
-                asker_file_name = time.strftime("%H%M%S_%d_%m_%Y") + "_AskerBrowser_" + context.scenario.name.replace(" ", "_") + "_" + context.step.name.replace(" ", "_") + "." + "png"
+                asker_file_name = time.strftime("%H%M%S_%d_%m_%Y") + "_AskerBrowser_" + context.scenario.name.replace(
+                    " ", "_") + "_" + context.step.name.replace(" ", "_") + "." + "png"
                 asker_rel_filename = screenshot_directory + asker_file_name
                 asker_dest_filename = script_directory + asker_rel_filename
                 context.asker_browser.save_screenshot(asker_dest_filename)
         except:
             print("Exception occurs. Can not take screenshot")
-

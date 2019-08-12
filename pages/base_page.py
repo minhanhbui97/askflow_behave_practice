@@ -14,13 +14,12 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    @abstractmethod
-    def is_present(self, element_in_container, container):
-        if self.get_element(element_in_container) is not None and self.get_element(container) is not None:
-            print("Element with identifier " + element_in_container + " is present in " + container)
+    def is_present(self):
+        if self.get_element(self.element_in_container) is not None and self.get_element(self.container) is not None:
+            print("Element with identifier " + self.element_in_container + " is present in " + self.container)
             return True
         else:
-            print("Element with identifier " + element_in_container + " is NOT present in " + container)
+            print("Element with identifier " + self.element_in_container + " is NOT present in " + self.container)
             return False
 
     def wait_until_presence_of_element_located(self, location, timeout=30):

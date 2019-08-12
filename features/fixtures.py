@@ -3,7 +3,7 @@ from behave import fixture
 
 
 @fixture
-def browser_asker(context, timeout=30, **kwargs):
+def browser_asker(context):
     # -- SETUP-FIXTURE PART: get_driver default argument (headless_mode=False)
     context.asker_browser = get_driver()
     yield context.asker_browser

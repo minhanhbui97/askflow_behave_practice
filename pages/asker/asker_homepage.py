@@ -9,7 +9,6 @@ class AskerHomePage(BasePage):
         self.element_in_container = "a#setting_menu"
         self.container = "div.gi-navBar"
 
-    _url_text = "home"
     _question_description_field = ".gi-FormGroup textarea.gi-Input"
     _question_type_select = "select.gi-InputCustomSelect"
     _post_question_button = "button.gi-Button"
