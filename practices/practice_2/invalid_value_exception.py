@@ -1,5 +1,4 @@
 class InvalidValueException(Exception):
-    message: str
 
-    def __init__(self, message):
-        self.message = message
+    def __init__(self, error_message):
+        super().__init__(error_message)
