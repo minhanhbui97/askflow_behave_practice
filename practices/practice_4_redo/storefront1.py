@@ -24,7 +24,7 @@ class Storefront1:
         self.banner_text = modify_data.get("banner_text", self.banner_text)
         self.description = modify_data.get("description", self.description)
         self.enabled = modify_data.get("enabled", self.enabled)
-        self.pop("")
+        # self.pop("")
         # modify_data.get("purchase_options") returns a list of dict objects
         for i, option in enumerate(modify_data.get("purchase_options")):
             # use option (a dict object) to update self.purchase_options[i] (a PurchaseOption object)
