@@ -1,7 +1,5 @@
 import json
 from practices.practice_4_redo.storefront_config1 import StorefrontConfig1
-from practices.practice_4_redo.serializable import Serializable
-
 
 
 class FileController1:
@@ -11,13 +9,10 @@ class FileController1:
         """
         Read a file
         :param file_name: string (input file)
-        :return: file's content: string
+        :return: data as a Storefront
         """
         with open(file_name) as file:
-            # return file.read()
             data = json.load(file)
-            # return StorefrontConfig(data, data.get("storefront"), data.get("storefront").get("purchase_options"))
-
         return StorefrontConfig1(data)
 
     @staticmethod
@@ -28,8 +23,5 @@ class FileController1:
         :param file_name: string (output file)
         """
         with open(file_name, 'w') as file:
-            # file.write(data)
             data = json.dump(storefront_object.convert_to_dict(), file, indent=4)
-            # data = json.dumps(storefront_object.__dict__, indent=4)
-            # data = json.dumps(storefront_object, default=lambda o: o.__dict__, sort_keys=True, indent=4)
             return data

@@ -35,11 +35,9 @@ modify_data = {
 
 file_location = os.path.dirname(os.path.realpath('__file__'))
 
-# Files
 input_file = file_location + "/data.json"
 output_file = file_location + "/result.json"
 
 config = FileController1().read_file(input_file)
 config.update_data(modify_data)
-print(config.storefront.purchase_options)
 FileController1().write_file(config, output_file)
