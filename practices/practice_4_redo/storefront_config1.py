@@ -22,5 +22,6 @@ class StorefrontConfig1:
 
     def convert_to_dict(self):
         storefront_config = copy.deepcopy(self.__dict__)
+        # call convert_to_dict method to convert storefront object to a dict
         storefront_config["storefront"] = storefront_config["storefront"].convert_to_dict()
         return storefront_config

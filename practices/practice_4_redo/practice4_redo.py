@@ -28,6 +28,25 @@ modify_data = {
               "free_learning_subscription": False,
               "team_type": "personal",
               "frequency": None
+          },
+{
+              "button_text": "Dynamic offer 1 - button_text",
+              "description": "Dynamic offer 1 - description",
+              "id": "",
+              "price": "100.99",
+              "price_text": "price_text",
+              "session_count": "0",
+              "subtitle": "Dynamic offer - subtitle",
+              "title": "Dynamic offer - title",
+              "suffix": "Dynamic offer - suffix",
+              "trial_duration": 0,
+              "min_member_count": 1,
+              "max_member_count": 1,
+              "action": "purchase",
+              "frequency_view": "monthly",
+              "free_learning_subscription": False,
+              "team_type": "personal",
+              "frequency": None
           }
       ]
   }
