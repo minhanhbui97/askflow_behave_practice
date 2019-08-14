@@ -29,7 +29,7 @@ class FileController1:
         """
         with open(file_name, 'w') as file:
             # file.write(data)
-            data = json.dump(storefront_object.transform_to_serializable(), file, indent=4)
+            data = json.dump(storefront_object.convert_to_dict(), file, indent=4)
             # data = json.dumps(storefront_object.__dict__, indent=4)
             # data = json.dumps(storefront_object, default=lambda o: o.__dict__, sort_keys=True, indent=4)
             return data

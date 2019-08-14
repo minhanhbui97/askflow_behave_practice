@@ -2,7 +2,7 @@ from practices.practice_4_redo.storefront1 import Storefront1
 from practices.practice_4_redo.serializable import Serializable
 
 
-class StorefrontConfig1(Serializable):
+class StorefrontConfig1(dict):
 
     def __init__(self, data):
         self.expiration_time = data.get("expiration_time")
@@ -19,3 +19,13 @@ class StorefrontConfig1(Serializable):
         self.storefront.update_data(modify_data.get("storefront"))
         self.utm_campaign = modify_data.get("utm_campaign")
         self.utm_source = modify_data.get("utm_source")
+
+    def convert_to_dict(self):
+        return {
+            "expiration_time": self.expiration_time,
+            "id": self.id,
+            "product": self.product,
+            "storefront": self.storefront.convert_to_dict(),
+            "utm_campaign": self.utm_campaign,
+            "utm_source": self.utm_source
+        }

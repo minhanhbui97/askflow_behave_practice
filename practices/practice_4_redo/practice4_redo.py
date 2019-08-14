@@ -41,6 +41,5 @@ output_file = file_location + "/result.json"
 
 config = FileController1().read_file(input_file)
 config.update_data(modify_data)
-
 print(config.storefront.purchase_options)
 FileController1().write_file(config, output_file)
